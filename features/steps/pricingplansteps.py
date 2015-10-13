@@ -3,10 +3,6 @@ from pages.saucemain import SauceMain
 from pages.saucepricing import SaucePricing
 from features.browser.browsers import make_browser
 
-@given('we are on "{platform}" using "{browser_name}" version "{version}"')
-def step_impl(context, platform, browser_name, version):
-  context.browser = make_browser(context.name, platform, browser_name, version)
-
 @given('we are looking at the sauce labs website')
 def step_impl(context):
   context.page = SauceMain(context.browser)

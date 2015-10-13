@@ -1,9 +1,9 @@
 import os
 from sauceclient import SauceClient
-from features.browser.browsers import username, access_key
+from features.browser.browsers import make_browser, username, access_key
 
 def before_scenario(context, scenario):
-  context.name = scenario.name
+  context.browser = make_browser(scenario.name)
 
 def after_scenario(context, scenario):
   if hasattr(context, 'browser'):

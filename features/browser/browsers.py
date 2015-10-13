@@ -4,17 +4,15 @@ from selenium import webdriver
 
 username = os.environ.get('SAUCE_USERNAME')
 access_key = os.environ.get('SAUCE_ACCESS_KEY')
-assert username, "Unable to pull username from environment variables"
-assert access_key, "Unable to pull access_key from environment variables"
 
 build = int(time.time());
 
-def make_browser(name, platform, browser_name, version):
+def make_browser(name):
   desired_cap = {
       "name": name,
-      "platform": platform,
-      "browser_name": browser_name,
-      "version": version,
+      "platform": os.environ.get('platform'),
+      "browser_name": os.environ.get('browserName'),
+      "version": os.environ.get('version'),
       "build": build,
   }
   browser = webdriver.Remote(
