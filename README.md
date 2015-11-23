@@ -10,4 +10,4 @@ In the command line you need to input the environmental variables for your Sauce
 
 To run the tests, cd into the testchallenge directory and enter:
 
-  `$ behave-parallel/bin/behave --processes 12 --parallel-element scenario`
+  `$ make run_all_in_parallel`
